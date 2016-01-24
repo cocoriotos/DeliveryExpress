@@ -3,6 +3,7 @@ package com.example.julian_gonzalez.deliveryexpress;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -45,12 +46,15 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      */
     private static final int REQUEST_READ_CONTACTS = 0;
 
+
+
     /**
      * A dummy authentication store containing known user names and passwords.
      * TODO: remove after connecting to a real authentication system.
      */
     private static final String[] DUMMY_CREDENTIALS = new String[]{
             "foo@example.com:hello", "bar@example.com:world"
+
     };
     /**
      * Keep track of the login task to ensure we can cancel it if requested.
@@ -64,6 +68,34 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private View mLoginFormView;
     private EditText pass_word;
     private Button button_sbm;
+    private static Button registralo;
+    private static Button registre;
+
+    public void registrar(){
+        registralo; = (Button) findViewById(R.id.button2);
+        registralo.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                public void onClick(View v){
+                        Intent intent1 = new Intent("com.example.julian_gonzalez.deliveryexpress.Register_Activity");
+                        startActivity(intent1);
+                    }
+                }
+        );
+    }
+
+    public void exitosoregistro(){
+        registre = (Button) findViewById(R.id.Register);
+        registre.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick(View v){
+                        Intent intent2 = new Intent("com.example.julian_gonzalez.deliveryexpress.Registro_Exitoso");
+                        startActivity(intent2);
+                    }
+                }
+        );
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -84,7 +116,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 return false;
             }
         });
-
+        registrarlo();
         Button mEmailSignInButton = (Button) findViewById(R.id.email_sign_in_button);
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override

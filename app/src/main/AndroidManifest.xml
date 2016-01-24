@@ -22,6 +22,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".Register_Activity">
+            <intent-filter>
+                <action android:name="com.example.julian_gonzalez.deliveryexpress.Register_Activity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".Registro_Exitoso"></activity>
+            <intent-filter>
+                <action android:name="com.example.julian_gonzalez.deliveryexpress.Registro_Exitoso" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
     </application>
 
 </manifest>
