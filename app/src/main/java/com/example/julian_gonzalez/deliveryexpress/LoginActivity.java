@@ -28,6 +28,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -61,6 +62,8 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private EditText mPasswordView;
     private View mProgressView;
     private View mLoginFormView;
+    private EditText pass_word;
+    private Button button_sbm;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -94,6 +97,21 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         mProgressView = findViewById(R.id.login_progress);
     }
 
+    public void addListenerOnButton() {
+        pass_word = (EditText) findViewById(R.id.EditText);
+        button_sbm = (Button) findViewById(R.id.button);
+        button_sbm.setOnClickListener(
+                new View.OnClickListener(){
+                    @Override
+                    public void onClick (View v){
+                        Toast.makeText(
+                                LoginActivity.this, pass_word.getText(),
+                                Toast.LENGTH_SHORT
+                        ).show();
+                    }
+                }
+        );
+    }
     private void populateAutoComplete() {
         if (!mayRequestContacts()) {
             return;
